@@ -3,7 +3,7 @@ const { validationResult } = require('express-validator');
 
 const getPets = async (req, res) => {
   try {
-    const { search, species, breed, age, page = 1, limit = 10 } = req.query;
+    const { search, species, breed, age, page = 1, limit = 8 } = req.query;
     
     let query = {};
     if (search) {
@@ -14,7 +14,7 @@ const getPets = async (req, res) => {
     }
     if (species) query.species = species;
     if (breed) query.breed = breed;
-    if (age) query.age = age;
+    if (age) query.age = { $lte: parseInt(age) };
 
     const skip = (page - 1) * limit;
 
