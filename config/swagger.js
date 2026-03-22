@@ -4,7 +4,7 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Pet Store API',
+      title: 'Pet Store API (Live)',
       version: '1.0.0',
       description: 'API Documentation for the Pet Store application',
     },
