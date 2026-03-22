@@ -18,7 +18,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // For production, replace with your frontend URL
+  credentials: true
+}));
 app.use(express.json());
 
 // Serve static uploaded assets
